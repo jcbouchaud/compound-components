@@ -12,7 +12,7 @@ interface WidgetCardInterface {
 
 const WidgetCard = ({ items, layout, content }: WidgetCardInterface) => {
     return (
-        <WidgetProvider value={{ widgetItems: items, layout }}>
+        <WidgetProvider value={{ items, layout }}>
             <div className="bg-white p-4 rounded-lg w-96">
                 <WidgetLayout>{content}</WidgetLayout>
             </div>

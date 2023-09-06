@@ -2,7 +2,7 @@ import { WidgetCard } from './components/Widget'
 
 function App() {
   
-  const widgetItems = [
+  const items = [
     {
         name: "Button 1",
         data: {
@@ -19,15 +19,15 @@ function App() {
 
   return (
     <div className='flex flex-row gap-4'>
-      <WidgetCard items={widgetItems} 
+      <WidgetCard items={items} 
         layout="top"
         content={<WidgetCard.Content />}
       />
-      <WidgetCard items={widgetItems} 
+      <WidgetCard items={items} 
         layout="left"
         content={<WidgetCard.Content />}
       />
-      <WidgetCard items={widgetItems} 
+      <WidgetCard items={items} 
         layout="left"
         content={<WidgetCard.ContentBis />}
       />

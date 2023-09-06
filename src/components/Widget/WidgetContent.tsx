@@ -1,9 +1,9 @@
 import { useWidgetContext } from "./WidgetContext"
 
 export const WidgetContent = () => {
-    const { widgetItems, currentItemId } = useWidgetContext()
+    const { currentItem } = useWidgetContext()
     
     return (
-        <div>{widgetItems[currentItemId].data.text}</div>
+        <div>{currentItem.data.text}</div>
     )
 }

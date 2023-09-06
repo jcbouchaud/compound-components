@@ -7,9 +7,9 @@ interface WidgetLayoutInterface {
 }
 
 export const WidgetLayout = ({ children }: WidgetLayoutInterface) => {
-    const { layout, widgetItems } = useWidgetContext()
+    const { layout, items } = useWidgetContext()
 
-    if (widgetItems.length <= 1) {
+    if (items.length <= 1) {
         return <>{children}</>
     }
 

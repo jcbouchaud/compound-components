@@ -8,28 +8,28 @@ export interface WidgetItem {
 }
 
 interface WidgetContextInitInterface {
-    widgetItems: Array<WidgetItem>,
+    items: Array<WidgetItem>,
     layout?: "top" | "left"
 }
 
 interface WidgetContextInterface extends WidgetContextInitInterface {
-    currentItemId: number,
+    currentItem: WidgetItem
     onItemSelect: (index: number) => void
 }
 
 export const WidgetCardContext = createContext<WidgetContextInterface | null>(null)
 
 export const WidgetProvider = ({ value, children }: { value: WidgetContextInitInterface, children: JSX.Element }) => {
-    const [currentItemId, setCurrentItemId] = useState<number>(0)
+    const [currentItem, setCurrentItem] = useState<WidgetItem>(value.items[0])
 
     const onItemSelect = (index: number) => {
-        setCurrentItemId(index)
+        setCurrentItem(value.items[index])
     }
 
     const contextValue = {
         ...value,
-        currentItemId,
-        onItemSelect
+        onItemSelect,
+        currentItem
     }
 
     return (
